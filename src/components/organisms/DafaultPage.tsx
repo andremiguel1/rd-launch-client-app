@@ -1,38 +1,31 @@
-import React, { Component, ReactNode } from 'react';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import MuiAppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Container from '@mui/material/Container';
-import Latest from '../launch/Latest';
-import Past from '../launch/Past';
-import { PaletteMode } from '@mui/material';
-import Upcoming from '../launch/Upcoming';
-import Next from '../launch/Next';
+import React, { Component, ReactNode } from "react";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import MuiAppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import CssBaseline from "@mui/material/CssBaseline";
+import Grid from "@mui/material/Grid";
+import Paper from "@mui/material/Paper";
+import Container from "@mui/material/Container";
+import Past from "../molecules/Past";
+import Latest from "../molecules/Latest";
+import { PaletteMode } from "@mui/material";
+import Upcoming from "../molecules/Upcoming";
+import Next from "../molecules/Next";
 
 const mdTheme = createTheme();
 
-export class DafaultPage extends Component<{mode: PaletteMode}>
-{
-
-  render(): ReactNode
-  {
+export class DafaultPage extends Component<{ mode: PaletteMode }> {
+  render(): ReactNode {
     mdTheme.palette.mode = this.props.mode;
 
     return (
       <ThemeProvider theme={mdTheme}>
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: "flex" }}>
           <CssBaseline />
           <MuiAppBar position="absolute">
-            <Toolbar
-              sx={{
-                pr: '24px', // keep right padding when drawer closed
-              }}
-            >
+            <Toolbar>
               <Typography
                 component="h1"
                 variant="h6"
@@ -47,14 +40,13 @@ export class DafaultPage extends Component<{mode: PaletteMode}>
           <Box
             component="main"
             sx={{
-              backgroundColor:
-                (theme) =>
-                  theme.palette.mode === 'light'
-                    ? theme.palette.grey[100]
-                    : theme.palette.grey[900],
+              backgroundColor: (theme) =>
+                theme.palette.mode === "light"
+                  ? theme.palette.grey[100]
+                  : theme.palette.grey[900],
               flexGrow: 1,
-              height: '100vh',
-              overflow: 'auto',
+              height: "100vh",
+              overflow: "auto",
             }}
           >
             <Toolbar />
@@ -65,8 +57,8 @@ export class DafaultPage extends Component<{mode: PaletteMode}>
                   <Paper
                     sx={{
                       p: 2,
-                      display: 'flex',
-                      flexDirection: 'column',
+                      display: "flex",
+                      flexDirection: "column",
                       height: 240,
                     }}
                   >
@@ -77,8 +69,8 @@ export class DafaultPage extends Component<{mode: PaletteMode}>
                   <Paper
                     sx={{
                       p: 2,
-                      display: 'flex',
-                      flexDirection: 'column',
+                      display: "flex",
+                      flexDirection: "column",
                       height: 240,
                     }}
                   >
@@ -94,8 +86,8 @@ export class DafaultPage extends Component<{mode: PaletteMode}>
                   <Paper
                     sx={{
                       p: 2,
-                      display: 'flex',
-                      flexDirection: 'column',
+                      display: "flex",
+                      flexDirection: "column",
                       height: 240,
                     }}
                   >
@@ -106,8 +98,8 @@ export class DafaultPage extends Component<{mode: PaletteMode}>
                   <Paper
                     sx={{
                       p: 2,
-                      display: 'flex',
-                      flexDirection: 'column',
+                      display: "flex",
+                      flexDirection: "column",
                       height: 240,
                     }}
                   >
