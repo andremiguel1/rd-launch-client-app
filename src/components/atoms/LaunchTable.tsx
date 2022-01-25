@@ -39,6 +39,7 @@ class LaunchTable extends Component<{
           <TableBody>
             {this.props.launches.map((row: LaunchModel) => (
               <TableRow key={row.id}>
+                <TableCell>{row.id}</TableCell>
                 <TableCell>{row.name}</TableCell>
                 <TableCell>{row.details}</TableCell>
                 <TableCell align="right">{row.flight_number}</TableCell>
