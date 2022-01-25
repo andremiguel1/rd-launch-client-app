@@ -2,6 +2,10 @@
 
 Site em React para mostrar os lançamentos de foguete da space-X,
 
+#Link da aplicação no Heroku
+-[Client App](https://reocket-launch-app.herokuapp.com)
+-[API](https://reocket-launch-app.herokuapp.com)
+
 ## Features
 
 - Listagem de lançamentos futuros
