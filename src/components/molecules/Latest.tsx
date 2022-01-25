@@ -1,29 +1,38 @@
-import React, { Component, ReactNode } from "react";
+import axios from 'axios';
+import React, { useEffect, useState } from "react";
 import { LaunchModel } from "../../model/LaunchModel";
 import LaunchDetail from "../atoms/LaunchDetail";
 
-class Latest extends Component {
-  render(): ReactNode {
-    const launch = {
-      date_local: new Date().toDateString(),
-      details: "Launch details",
-      name: "Launch Name",
-      id: "abcd1efgh2",
-      flight_number: "125",
-    } as LaunchModel;
-    return (
-      <React.Fragment>
-        <LaunchDetail
-          title="Latest Launch"
-          date_local={launch.date_local}
-          details={launch.details}
-          name={launch.name}
-          flight_number={launch.flight_number}
-          id={launch.id}
-        />
-      </React.Fragment>
-    );
-  }
+const API_LATEST_LAUNCH = 'https://rockt-launch-service.herokuapp.com/latest';
+
+const Latest: React.FC = () =>
+{
+  const [launch, setLaunch] = useState({} as LaunchModel);
+
+  useEffect(() =>
+  { 
+    const loadLatestLaunch = async() =>
+    {
+      console.log('oi');
+      const response = await axios.get(API_LATEST_LAUNCH);
+      const { data } = response;
+      setLaunch(data as LaunchModel);
+    }
+    loadLatestLaunch();
+  }, [launch]);
+
+  return (
+    <React.Fragment>
+      <LaunchDetail
+        title="Latest Launch"
+        date_local={ launch.date_local }
+        details={launch.details}
+        name={launch.name}
+        flight_number={launch.flight_number}
+        id={launch.id}
+      />
+    </React.Fragment>
+  );
 }
 
 export default Latest;
