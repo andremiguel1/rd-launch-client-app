@@ -4,8 +4,8 @@ Site em React para mostrar os lançamentos de foguete da space-X,
 
 ## Link dsa aplicações no Heroku
 
--[Client App](https://reocket-launch-app.herokuapp.com) - Site em reactJS
--[API](https://reocket-launch-app.herokuapp.com) - API's em NodeJS
+- [Client App](https://reocket-launch-app.herokuapp.com) - Site em reactJS
+- [API](https://reocket-launch-app.herokuapp.com) - API's em NodeJS
 
 ## Features
 
