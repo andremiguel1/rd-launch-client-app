@@ -1,28 +1,36 @@
-import React, { Component, ReactNode } from "react";
+import axios from 'axios';
+import React, { useEffect, useState } from "react";
 import { LaunchModel } from "../../model/LaunchModel";
 import LaunchDetail from "../atoms/LaunchDetail";
 
-class Next extends Component {
-  render(): ReactNode {
-    const launch = {
-      date_local: new Date().toDateString(),
-      details: "Next Launch details",
-      name: "Next Launch Name",
-      id: "abcd1efgh2",
-      flight_number: "42",
-    } as LaunchModel;
-    return (
-      <React.Fragment>
-        <LaunchDetail
-          title="Next Launch"
-          date_local={launch.date_local}
-          details={launch.details}
-          name={launch.name}
-          flight_number={launch.flight_number}
-          id={launch.id}
-        />
-      </React.Fragment>
-    );
-  }
+const API_NEXT_LAUNCH = 'https://rockt-launch-service.herokuapp.com/next';
+
+const Next: React.FC = () =>
+{
+  const [launch, setLaunch] = useState({} as LaunchModel);
+
+  useEffect(() =>
+  { 
+    const loadLatestLaunch = async() =>
+    {
+      const response = await axios.get(API_NEXT_LAUNCH);
+      const { data } = response;
+      setLaunch(data as LaunchModel);
+    }
+    loadLatestLaunch();
+  }, [launch]);
+  
+  return (
+    <React.Fragment>
+      <LaunchDetail
+        title="Next Launch"
+        date_local={launch.date_local}
+        details={launch.details}
+        name={launch.name}
+        flight_number={launch.flight_number}
+        id={launch.id}
+      />
+    </React.Fragment>
+  );
 }
 export default Next;
