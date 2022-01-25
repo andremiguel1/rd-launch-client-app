@@ -14,7 +14,7 @@ class LaunchDetail extends Component<LaunchModel> {
         </Typography>
         <Typography>Name: {this.props.name}</Typography>
         <hr />
-        <Typography color="#000000">{this.props.details}</Typography>
+        <Typography color="#000000" component="p">{this.props.details}</Typography>
       </React.Fragment>
     );
   }

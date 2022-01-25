@@ -51,61 +51,55 @@ export class DafaultPage extends Component<{ mode: PaletteMode }> {
           >
             <Toolbar />
             <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-              <Grid container spacing={1}>
+              <Grid container spacing={1} columns={20}>
                 {/* Past Launches */}
-                <Grid item xs={12} md={4} lg={4}>
+                <Grid item xs={16} md={4} lg={4}>
                   <Paper
                     sx={{
                       p: 2,
                       display: "flex",
                       flexDirection: "column",
-                      height: 240,
+                      height: "inherit",
                     }}
                   >
                     <Next />
                   </Paper>
-                </Grid>
-                <Grid item xs={12} md={8} lg={8}>
+                  <br></br>
                   <Paper
                     sx={{
                       p: 2,
                       display: "flex",
                       flexDirection: "column",
-                      height: 240,
-                    }}
-                  >
-                    <Upcoming />
-                  </Paper>
-                </Grid>
-              </Grid>
-            </Container>
-            <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-              <Grid container spacing={1}>
-                {/* Past Launches */}
-                <Grid item xs={12} md={8} lg={8}>
-                  <Paper
-                    sx={{
-                      p: 2,
-                      display: "flex",
-                      flexDirection: "column",
-                      height: 240,
-                    }}
-                  >
-                    <Past />
-                  </Paper>
-                </Grid>
-                <Grid item xs={12} md={8} lg={4}>
-                  <Paper
-                    sx={{
-                      p: 2,
-                      display: "flex",
-                      flexDirection: "column",
-                      height: 240,
+                      height: "inherit",
                     }}
                   >
                     <Latest />
                   </Paper>
                 </Grid>
+                <Grid item xs={16} md={8} lg={16}>
+                <Paper
+                    sx={{
+                      p: 2,
+                      display: "flex",
+                      flexDirection: "column",
+                      height: "inherit",
+                    }}
+                  >
+                    <Upcoming />
+                  </Paper>
+                  <br/>
+                  <Paper
+                    sx={{
+                      p: 2,
+                      display: "flex",
+                      flexDirection: "column",
+                      height: "inherit",
+                    }}
+                  >
+                    <Past />
+                  </Paper>
+                </Grid>
+               
               </Grid>
             </Container>
           </Box>

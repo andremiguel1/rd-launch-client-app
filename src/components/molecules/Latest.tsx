@@ -13,7 +13,6 @@ const Latest: React.FC = () =>
   { 
     const loadLatestLaunch = async() =>
     {
-      console.log('oi');
       const response = await axios.get(API_LATEST_LAUNCH);
       const { data } = response;
       setLaunch(data as LaunchModel);
