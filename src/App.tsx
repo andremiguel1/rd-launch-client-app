@@ -22,7 +22,7 @@ const App = () => {
 
   ReactGA.pageview(window.location.pathname + window.location.search);
 
-  const variant = useGoogleOptimize("pBSqTQ0nQrWUnkOCIYe6jQ", [0, 1], 1000);
+  const variant = useGoogleOptimize("jSW5iwE4QwuZEPPiwHwizA", [0, 1], 1000);
   // let variant = 0;
   window.dataLayer.push({
     event: "optimize.callback",
